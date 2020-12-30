@@ -22,5 +22,6 @@ hiver_2020.save!
 
 puts "creating articles"
 blow_up = Article.new(name: "blow up", price: 100, description: "You Lost You Lost You Lost You Lost You Lost You Lost You Lost You ", brand: blu_velvet, collection: ete_2021)
+blow_up.save!
 
 puts "seed created"
