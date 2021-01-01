@@ -1,4 +1,25 @@
 // ARTICLES INDEX
-.card-article {
+.cards-article {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+}
 
+.card-article {
+  border-radius: 1px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  height: 150px;
+  width: 300px;
+  background-size: cover;
+}
+
+.card-article-infos {
+  margin: 5px;
+}
+
+.card-article-name-price {
+  flex-grow: 1;
+  justify-content: space-between;
 }
