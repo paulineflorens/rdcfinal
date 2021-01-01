@@ -1,1 +1,20 @@
+<!-- Affichage titre + explication -->
+<div>
+  <h1>La collection</h1>
+  <p>Retrouvez toutes nos chaussures dans notre magasin à Marseille</p>
+</div>
+
+<div class="card-article-container">
+  <% @articles.each do |article| %>
+    <div class="card-article">
+        <!-- <div style="background-image: url('<%= cl_image_path article.photo.key %>')"></div> -->
+      <div class="card-trip-infos">
+          <h2><%= article.name %></h2>
+          <p><%= article.brand.name %></p>
+        <h2 class="card-trip-pricing"><%= article.price %></h2>
+      </div>
+    </div>
+  <% end %>
+</div>
+
 
