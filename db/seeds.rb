@@ -23,12 +23,12 @@ hiver_2020 = Collection.new(name: "Hiver 2020")
 hiver_2020.save!
 
 puts "creating articles"
-run_file = URI.open('https://www.decale.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/B/L/BLU_VELVET_Run_Argent-1_1.jpg')
+run_file = URI.open('https://images.unsplash.com/photo-1512132269166-1fcc8e571966?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
 run = Article.new(name: "run", price: 100, description: "You Lost You Lost You Lost You Lost You Lost You Lost You Lost You ", brand: blu_velvet, collection: ete_2021)
 run.photo.attach(io: run_file, filename: 'run.png', content_type: 'image/png')
 run.save!
 
-setsu_file = URI.open('https://www.la-botte.com/PHOTOS/Laidback_London/SETSU_CROCHET_ZIP_MUSTARD_HD.jpg')
+setsu_file = URI.open('https://images.unsplash.com/photo-1512132269166-1fcc8e571966?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
 setsu = Article.new(name: "setsu", price: 100, description: "You Lost You Lost You Lost You Lost You Lost You Lost You Lost You ", brand: laid_back_london, collection: hiver_2020)
 setsu.photo.attach(io: setsu_file, filename: 'setsu.png', content_type: 'image/png')
 setsu.save!

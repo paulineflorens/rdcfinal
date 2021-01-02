@@ -4,17 +4,19 @@
   <p>Retrouvez toutes nos chaussures dans notre magasin à Marseille</p>
 </div>
 
-<div class="card-article-container">
+<div class="cards-article container">
   <% @articles.each do |article| %>
     <div class="card-article">
-        <!-- <div style="background-image: url('<%= cl_image_path article.photo.key %>')"></div> -->
-      <div class="card-trip-infos">
-          <h2><%= article.name %></h2>
-          <p><%= article.brand.name %></p>
-        <h2 class="card-trip-pricing"><%= article.price %></h2>
+      <div class="card-article-photo" style="background-image: url('<%= cl_image_path article.photo %>')">
+      </div>
+      <div class="card-article-infos">
+        <div class="card-article-name-price d-flex">
+          <h5><%= article.name %></h5>
+          <h5><%= article.price %>€</h5>
+        </div>
+        <p><%= article.brand.name %></p>
       </div>
     </div>
   <% end %>
 </div>
-
 

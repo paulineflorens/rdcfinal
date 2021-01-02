@@ -1,1 +1,30 @@
 // Specific CSS for your home-page
+.underline {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  margin-top: 10px;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+ }
+
+.underline:after {
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  background: black;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+  text-decoration: none;
+}
+
+.underline:hover:after {
+  text-decoration: none;
+  width: 100%;
+  left: 0;
+}
+
