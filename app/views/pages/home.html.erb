@@ -1,2 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="banner">
+  <h1>Nouvelle collection</h1>
+  <%= link_to "DÉCOUVRIR", articles_path, class: "underline"  %>
+</div>
+
+<div class="container">
+  <h3>Les dernières nouveautés</h3>
+  <%= link_to "voir tous", articles_path, class: "underline" %>
+  <div class="cards-article">
+    <% @articles.last(3).each do |article| %>
+      <div class="card-article">
+        <div class="card-article-photo" style="background-image: url('<%= cl_image_path article.photo %>')">
+        </div>
+        <div class="card-article-infos">
+          <div class="card-article-name-price d-flex">
+            <h5><%= article.name %></h5>
+            <h5><%= article.price %>€</h5>
+          </div>
+          <p><%= article.brand.name %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
