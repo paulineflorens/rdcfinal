@@ -1,22 +1,38 @@
 <!-- Affichage titre + explication -->
-<div>
+
+<div class="container-index">
   <h1>La collection</h1>
   <p>Retrouvez toutes nos chaussures dans notre magasin à Marseille</p>
-</div>
 
-<div class="cards-article container">
-  <% @articles.each do |article| %>
-    <div class="card-article">
-      <div class="card-article-photo" style="background-image: url('<%= cl_image_path article.photo %>')">
+  <div class="content-index d-flex">
+    <div id="form">
+      <h4>Filtrer votre recherche</h4>
+      <%= link_to "Effacer la recherche", articles_path, class: "text_link" %>
+      <%= form_tag(articles_path, method: :get) do %>
+      <% Brand.all.each do |b| %>
+      <div id="inline-form">
+        <%= radio_button_tag "query", b.name %>
+        <%= label_tag b.name %>
       </div>
-      <div class="card-article-infos">
-        <div class="card-article-name-price d-flex">
-          <h5><%= article.name %></h5>
-          <h5><%= article.price %>€</h5>
-        </div>
-        <p><%= article.brand.name %></p>
-      </div>
+      <% end %>
+      <%= submit_tag "Rechercher", class: "btn btn-outline-dark" %>
+      <% end %>
     </div>
-  <% end %>
-</div>
 
+    <div class="cards-article container">
+      <% @articles.each do |article| %>
+        <div class="card-article">
+          <div class="card-article-photo" style="background-image: url('<%= cl_image_path article.photo %>')">
+          </div>
+          <div class="card-article-infos">
+            <div class="card-article-name-price d-flex">
+              <h5><%= article.name %></h5>
+              <h5><%= article.price %>€</h5>
+            </div>
+            <p><%= article.brand.name %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
